@@ -1,0 +1,20 @@
+<pl-table-header
+    class="pl-table__header"
+    [tableOptions]="appliedTableOptions"
+    [tableColumnDefinitions]="tableColumnsDefinitions"
+    [allTabelRowsAreSelected]="tableData.length === selectedTableRows.length"
+    (sortChange)="onSortChange($event)"
+    (allRowsSelected)="onSelectedTableRowsAddAll()"
+    (AllRowsUnselected)="onSelectedTableRowsRemoveAll()">
+</pl-table-header>
+<pl-table-row 
+    class="pl-table__row"
+    *ngFor="let tableRowData of tableData; let i = index"
+    [tableOptions]="appliedTableOptions"
+    [tableColumnDefinitions]="tableColumnsDefinitions"
+    [tableRowData]="tableRowData"
+    [selectedTableRows]="selectedTableRows"
+    (rowSelected)="onSelectedTableRowsAdd($event)"
+    (rowUnselected)="onSelectedTableRowsRemove($event)"
+    (click)="onTableRowClick($event, tableRowData, i)">
+</pl-table-row>

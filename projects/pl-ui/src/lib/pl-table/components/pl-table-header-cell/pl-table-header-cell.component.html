@@ -1,0 +1,11 @@
+<span 
+    class="pl-table__header__cell__label"
+    [ngClass]="{
+        'pl-table__header__cell__label--sortable': tableColumnDefinition.sortable,
+        'pl-table__header__cell__label--sorted': tableColumnDefinition.field === tableOptions.sortBy,
+        'pl-table__header__cell__label--sorted-asc': tableColumnDefinition.field === tableOptions.sortBy && tableOptions.sortOrder === 'asc',
+        'pl-table__header__cell__label--sorted-desc': tableColumnDefinition.field === tableOptions.sortBy && tableOptions.sortOrder === 'desc'
+    }"
+    (click)="onLabelClick()">
+        {{ tableColumnDefinition.title }}
+</span>

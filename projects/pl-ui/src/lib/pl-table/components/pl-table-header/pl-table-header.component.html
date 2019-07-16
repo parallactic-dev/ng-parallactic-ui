@@ -1,0 +1,10 @@
+<div class="pl-table__header__row-selector" *ngIf="tableOptions.selectableRows">
+    <input type="checkbox" (click)="onTableRowSelectAll($event)" [checked]="allTabelRowsAreSelected">
+</div>
+<pl-table-header-cell 
+    class="pl-table__header__cell "
+    *ngFor="let tableColumnDefinition of tableColumnDefinitions; let i = index"
+    [tableOptions]="tableOptions"
+    [tableColumnDefinition]="tableColumnDefinition"
+    (sortChange)="onSortChange($event)">
+</pl-table-header-cell>

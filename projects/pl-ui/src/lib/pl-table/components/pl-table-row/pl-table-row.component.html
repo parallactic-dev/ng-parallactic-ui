@@ -1,0 +1,9 @@
+<div class="pl-table__row__selector" *ngIf="tableOptions.selectableRows">
+    <input type="checkbox" (click)="onTableRowSelect($event)" [checked]="isSelectedTableRow()">
+</div>
+<pl-table-cell 
+    class="pl-table__cell"
+    *ngFor="let tableColumnDefinition of tableColumnDefinitions; let i = index"
+    [tableCellData]="getCellValue(tableRowData, tableColumnDefinition)"
+    [tableColumnDefinition]="tableColumnDefinition">
+</pl-table-cell>
