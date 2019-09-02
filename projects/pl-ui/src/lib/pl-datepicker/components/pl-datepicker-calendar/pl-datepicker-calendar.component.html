@@ -1,0 +1,28 @@
+<div class="pl-datepicker-calendar">
+    <ul class="pl-datepicker-calendar__weeks">
+        <li class="pl-datepicker-calendar__week-header">
+            <ul class="pl-datepicker-calendar__day-labels">
+                <li class="pl-datepicker-calendar__day-label" *ngFor="let day of getDaysInMonth()[0]['days'];">{{ day | date:'EEEEE' }}</li>
+            </ul>
+        </li>
+
+        <li class="pl-datepicker-calendar__week"
+            *ngFor="let week of getDaysInMonth();">
+                <ul class="pl-datepicker-calendar__days">
+                    <li class="pl-datepicker-calendar__week-no">{{ week.no }}</li>
+                    <li 
+                        class="pl-datepicker-calendar__day"
+                        [ngClass]="{
+                            'pl-datepicker-calendar__day--selected': isSelectedDate(day),
+                            'pl-datepicker-calendar__day--today': isToday(day),
+                            'pl-datepicker-calendar__day--current-month': isInCurrentMonth(day)
+                        }"
+                        *ngFor="let day of week.days;"
+                        (click)="onDateSelect(day)">
+                            {{ day | date:'dd' }}
+                    </li>
+                </ul>
+        </li>
+
+    </ul>
+</div>

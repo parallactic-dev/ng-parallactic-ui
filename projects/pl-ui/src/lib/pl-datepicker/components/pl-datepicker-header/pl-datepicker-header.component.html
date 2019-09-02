@@ -1,0 +1,5 @@
+<header class="pl-datepicker-header">
+    <button class="pl-datepicker-header__btn-next-month" (click)="onNavigateToPreviousMonth()"><</button>
+    <span class="pl-datepicker-header__current-month">{{ currentMonth | date:'MMMM yyyy' }}</span>
+    <button class="pl-datepicker-header__btn-prev-month" (click)="onNavigateToNextMonth()">></button>
+</header>

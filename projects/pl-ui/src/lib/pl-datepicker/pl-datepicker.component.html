@@ -1,0 +1,4 @@
+<div class="pl-datepicker" (clickOutside)="hideOverlay()">
+    <span class="pl-datepicker__model" (click)="toggleDatepickerOverlay()">{{ model | date:appliedOptions.dateFormat }}</span>
+    <pl-datepicker-overlay *ngIf="showOverlay"></pl-datepicker-overlay>
+</div>

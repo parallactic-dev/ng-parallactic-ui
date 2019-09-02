@@ -1,0 +1,56 @@
+.pl-table {
+    display: block;
+    position: relative;  
+}
+
+.pl-table__header {
+    border-bottom: .0625rem solid lighten($color-dark, 50%);
+    text-transform: uppercase;
+    font-size: .875rem;
+}
+
+.pl-table__header__cell {
+    padding: .5rem .875rem;
+    color: $color-dark;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pl-table__header__cell__label {
+    
+}
+
+.pl-table__header__cell__label--sortable {
+    cursor: pointer;
+}
+
+.pl-table__header__cell__label--sorted-asc:after,
+.pl-table__header__cell__label--sorted-desc:after {
+    content: "";
+    display: inline-block;
+    width: .4rem; height: .4rem;
+    border-top: .0625rem solid $color-dark;
+    border-left: .0625rem solid $color-dark;
+    transform: rotate(45deg);
+    transform-origin: center center;
+    vertical-align: top;
+}
+.pl-table__header__cell__label--sorted-desc:after {
+    transform: rotate(225deg);
+}
+
+.pl-table__row {
+    border: .0625rem solid lighten($color-dark, 50%);
+    background: $color-light;
+    margin-top: -.0625rem;
+}
+.pl-table__row:hover {
+    background: lighten($color-dark, 70%);
+}
+
+.pl-table__cell {
+    padding: .875rem .875rem .8rem;
+    line-height: 1.3;
+}

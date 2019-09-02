@@ -1,0 +1,125 @@
+.pl-datepicker {
+    position: relative;
+}
+
+.pl-datepicker-overlay {
+    position: absolute;
+    width: 19rem;
+    height: 20rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    background: $color-light;
+    box-shadow: 0 0 4px 2px rgba(41,57,61,0.18);
+    z-index: 100;
+}
+
+.pl-datepicker-header {
+    display: flex;
+    justify-content: space-between;
+    height: 3.125rem;
+    padding: .55rem .5rem;
+    color: $color-light;
+    background: $color-secondary;
+}
+.pl-datepicker-header__btn-next-month,
+.pl-datepicker-header__btn-prev-month {
+    width: 2rem; height: 2rem;
+    border: none;
+    outline: none;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0;
+    background: center no-repeat url('./assets/images/datepicker-chevron-left.svg') rgba($color-light, .1);
+}
+.pl-datepicker-header__btn-prev-month {
+    background-image: url('./assets/images/datepicker-chevron-right.svg');
+}
+.pl-datepicker-header__btn-next-month:hover,
+.pl-datepicker-header__btn-prev-month:hover {
+    background-color: rgba($color-light, .2);
+}
+.pl-datepicker-header__current-month {
+    font-size: 1rem;
+    line-height: 2.1rem;
+    letter-spacing: .03125rem;
+}
+
+.pl-datepicker-calendar {
+    height: calc(100% - 3.125rem);
+    padding: 1rem .4375rem;
+    border: .0625rem solid rgba($color-secondary, .25);
+}
+
+.pl-datepicker-calendar__weeks,
+.pl-datepicker-calendar__day-labels,
+.pl-datepicker-calendar__days {
+    padding: 0;
+    margin: 0;
+}
+
+.pl-datepicker-calendar__week-header,
+.pl-datepicker-calendar__week {
+    display: block;
+}
+
+.pl-datepicker-calendar__day-labels,
+.pl-datepicker-calendar__days {
+    display: flex;
+}
+
+.pl-datepicker-calendar__day,
+.pl-datepicker-calendar__week-no {
+    display: block;
+    width: 12.5%;
+}
+
+.pl-datepicker-calendar__day {
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 200ms;
+}
+
+.pl-datepicker-calendar__day-labels {
+    margin-left: 12.5%;
+}
+
+.pl-datepicker-calendar__day-label {
+    display: block;
+    width: 14.2857142857%;
+}
+
+.pl-datepicker-calendar__day-label {
+    font-size: .85rem;
+    color: rgba($color-secondary, .4);
+    text-align: center;
+}
+
+.pl-datepicker-calendar__day {
+    font-size: .9rem;
+    color: rgba($color-secondary, .4);
+    text-align: center;
+    line-height: 2rem;
+}
+
+.pl-datepicker-calendar__week-no {
+    font-size: .75rem;
+    color: darken($color-primary, 20%);
+    text-align: center;
+    line-height: 2rem;
+}
+
+.pl-datepicker-calendar__day--current-month {
+    color: $color-secondary;
+}
+
+.pl-datepicker-calendar__day--today {
+    background: rgba($color-secondary, .07);
+}
+
+.pl-datepicker-calendar__day:hover {
+    background: rgba($color-primary, .75);
+}
+
+.pl-datepicker-calendar__day--selected {
+    background: $color-primary;
+}
