@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "pl-ui": [
-        "dist/pl-ui"
+      "parallactic-ui": [
+        "dist/parallactic-ui"
       ],
-      "pl-ui/*": [
-        "dist/pl-ui/*"
+      "parallactic-ui/*": [
+        "dist/parallactic-ui/*"
       ]
     }
   },

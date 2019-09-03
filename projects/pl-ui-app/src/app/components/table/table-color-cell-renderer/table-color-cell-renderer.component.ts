@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { PlTableCellData } from 'pl-ui/lib/pl-table/interfaces/pl-table-cell-data';
+import { PlTableCellData } from 'projects/parallactic-ui/src/lib/pl-table/interfaces/pl-table-cell-data';
 
 @Component({
     selector: 'app-table-color-cell-renderer',

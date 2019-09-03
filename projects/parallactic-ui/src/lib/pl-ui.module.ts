@@ -49,4 +49,4 @@ import { PlDatepickerHeaderComponent } from './pl-datepicker/components/pl-datep
         PlTableCellRendererComponent
     ]
 })
-export class PlUiModule { }
+export class ParallacticUiModule { }

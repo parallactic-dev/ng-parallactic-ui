@@ -1,0 +1,16 @@
+{
+  "name": "parallactic-ui",
+  "version": "0.0.1",
+  "description": "A collection of simple unstyled ui components for Angular.",
+  "keywords": ["ui", "framework", "angular", "parallactic"],
+  "author": {
+      "name": "Parallactic GmbH, Zurich Switzerland",
+      "url": "https://parallactic.dev",
+      "email": "mail@parallactic.dev"
+  },
+  "peerDependencies": {
+    "@angular/common": "^8.1.1",
+    "@angular/core": "^8.1.1"
+  },
+  "license" : "GPL-3.0-or-later"
+}
