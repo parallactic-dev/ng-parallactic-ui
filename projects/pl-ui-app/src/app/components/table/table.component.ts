@@ -33,4 +33,8 @@ export class TableComponent {
         return rowData.prename + ' ' + rowData.name;
     }
 
+    public onTableRowClick(item) {
+        console.log(item);
+    }
+
 }

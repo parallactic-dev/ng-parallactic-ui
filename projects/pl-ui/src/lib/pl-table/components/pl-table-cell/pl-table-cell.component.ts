@@ -13,7 +13,7 @@ export class PlTableCellComponent implements OnInit {
     @Input() tableCellData: PlTableCellData;
     @Input() tableColumnDefinition: PlTableColumnDefinition;
 
-    @ViewChild(PlTableCellDirective, { static: true }) tableCellRenderer: PlTableCellDirective;
+    @ViewChild(PlTableCellDirective, {static: true}) tableCellRenderer: PlTableCellDirective;
 
     private defaultTableCellRenderer = PlTableCellRendererComponent;
 

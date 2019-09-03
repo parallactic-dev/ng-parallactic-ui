@@ -13,7 +13,7 @@ import { PlTableCellService } from './services/pl-table-cell.service';
     providers: [ PlTableCellService ]
 })
 export class PlTableComponent {
-    private _tableData: any[];
+    private _tableData: any[] = [];
     public appliedTableOptions: PlTableOptions = {};
     public selectedTableRows: any[] = [];
 
@@ -24,8 +24,10 @@ export class PlTableComponent {
 
     @Input('tableData')
     set tableData(tableData: any[]) {
-        this._tableData = tableData;
-        this.applyTableOptions(this.tableOptions);
+        if (this.tableColumnsDefinitions) {
+            this._tableData = tableData ? tableData : [];
+            this.applyTableOptions(this.tableOptions);
+        }
     }
     get tableData() {
         return this._tableData;
@@ -39,6 +41,7 @@ export class PlTableComponent {
         this.appliedTableOptions.sortBy = options.sortBy || null;
         this.appliedTableOptions.sortOrder = options.sortOrder || 'asc';
         this.appliedTableOptions.selectableRows = options.selectableRows || false;
+        this.appliedTableOptions.selectOnRowClick = options.selectOnRowClick || false;
 
         this.sortTableData();
     }
@@ -58,23 +61,37 @@ export class PlTableComponent {
             const orderModifyer = this.appliedTableOptions.sortOrder === 'asc' ? 1 : -1;
             const tableColumnDefinition = this.tableColumnsDefinitions.find(item => item.field === this.appliedTableOptions.sortBy);
 
-            let tableCellA = this.plTableCellService.getTableCellValue(a, tableColumnDefinition).value;
-            let tableCellB = this.plTableCellService.getTableCellValue(b, tableColumnDefinition).value;
+            const tableCellA = this.plTableCellService.getTableCellValue(a, tableColumnDefinition);
+            const tableCellB = this.plTableCellService.getTableCellValue(b, tableColumnDefinition);
 
-            if (typeof tableCellA === 'string')
-                tableCellA = tableCellA.toLowerCase();
+            let tableCellAValue = tableCellA ? tableCellA.value : 0;
+            let tableCellBValue = tableCellB ? tableCellB.value : 0;
 
-            if (typeof tableCellB === 'string')
-                tableCellB = tableCellB.toLowerCase();
+            if (typeof tableCellAValue === 'string') {
+                tableCellAValue = tableCellAValue.toLowerCase();
+            }
 
-            if (tableCellA > tableCellB) return 1 * orderModifyer;
-            if (tableCellA < tableCellB) return -1 * orderModifyer;
+            if (typeof tableCellBValue === 'string') {
+                tableCellBValue = tableCellBValue.toLowerCase();
+            }
+
+            if (tableCellAValue > tableCellBValue) return 1 * orderModifyer;
+            if (tableCellAValue < tableCellBValue) return -1 * orderModifyer;
+
             return 0;
         });
     }
 
 
     /* Selected table rows */
+
+    public onSelectedTableRowsToggle(tableRow: any) {
+        if (this.selectedTableRows.indexOf(tableRow) > -1) {
+            this.onSelectedTableRowsRemove(tableRow);
+        } else {
+            this.onSelectedTableRowsAdd(tableRow);
+        }
+    }
 
     public onSelectedTableRowsAdd(tableRow: any) {
         this.selectedTableRows.push(tableRow);
@@ -83,9 +100,10 @@ export class PlTableComponent {
 
     public onSelectedTableRowsRemove(tableRow: any) {
         const rowIndex = this.selectedTableRows.indexOf(tableRow);
-        if (rowIndex > -1)
+        if (rowIndex > -1) {
             this.selectedTableRows.splice(rowIndex, 1);
-        this.tableRowSelectionChanged.emit(this.selectedTableRows);
+            this.tableRowSelectionChanged.emit(this.selectedTableRows);
+        }
     }
 
     public onSelectedTableRowsAddAll() {
@@ -103,6 +121,12 @@ export class PlTableComponent {
 
     public onTableRowClick(event: Event, tableRowData: any, tableRowIndex: number) {
         this.tableRowClicked.emit({ event, tableRowData, tableRowIndex });
+
+        // select row if "selectOnRowClick" option is set true
+        if (this.appliedTableOptions.selectableRows
+            && this.appliedTableOptions.selectOnRowClick) {
+                this.onSelectedTableRowsToggle(tableRowData);
+        }
     }
 
 }
