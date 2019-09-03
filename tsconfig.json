@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "parallactic-ui": [
-        "dist/parallactic-ui"
+      "ng-parallactic-ui": [
+        "dist/ng-parallactic-ui"
       ],
-      "parallactic-ui/*": [
-        "dist/parallactic-ui/*"
+      "ng-parallactic-ui/*": [
+        "dist/ng-parallactic-ui/*"
       ]
     }
   },

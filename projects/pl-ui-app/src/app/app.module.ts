@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { ParallacticUiModule } from 'parallactic-ui';
+import { NgParallacticUiModule } from 'ng-parallactic-ui';
 
 import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
@@ -19,7 +19,7 @@ import { DatepickerComponent } from './components/datepicker/datepicker.componen
     imports: [
         BrowserModule,
         FormsModule,
-        ParallacticUiModule
+        NgParallacticUiModule
     ],
     providers: [],
     entryComponents: [

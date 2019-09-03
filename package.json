@@ -1,5 +1,5 @@
 {
-  "name": "parallactic-ui",
+  "name": "ng-parallactic-ui",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,10 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build_lib": "ng build parallactic-ui",
-    "npm_pack": "cd dist/parallactic-ui && npm pack",
+    "build_lib": "ng build ng-parallactic-ui",
+    "npm_pack": "cd dist/ng-parallactic-ui && npm pack",
     "package": "npm run build_lib && npm run npm_pack",
-    "publish_lib": "cd dist/parallactic-ui && npm publish"
+    "publish_lib": "cd dist/ng-parallactic-ui && npm publish"
   },
   "private": true,
   "dependencies": {

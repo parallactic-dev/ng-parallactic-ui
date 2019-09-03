@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TableColorCellRendererComponent } from './table-color-cell-renderer/table-color-cell-renderer.component';
-import { PlTableOptions } from 'dist/parallactic-ui/lib/pl-table/interfaces/pl-table-options';
-import { PlTableColumnDefinition } from 'dist/parallactic-ui/lib/pl-table/interfaces/pl-table-column-definition';
+import { PlTableOptions } from 'dist/ng-parallactic-ui/lib/pl-table/interfaces/pl-table-options';
+import { PlTableColumnDefinition } from 'dist/ng-parallactic-ui/lib/pl-table/interfaces/pl-table-column-definition';
 
 @Component({
     selector: 'app-table',
