@@ -2,10 +2,16 @@
     position: relative;
 }
 
+.pl-datepicker__model {
+    display: block;
+    padding: .6rem;
+    border: .0625rem solid lighten($color-secondary, 50%);
+}
+
 .pl-datepicker-overlay {
     position: absolute;
     width: 19rem;
-    height: 20rem;
+    height: 21.3rem;
     padding: 1rem;
     box-sizing: border-box;
     background: $color-light;
@@ -45,7 +51,6 @@
 }
 
 .pl-datepicker-calendar {
-    height: calc(100% - 3.125rem);
     padding: 1rem .4375rem;
     border: .0625rem solid rgba($color-secondary, .25);
 }
