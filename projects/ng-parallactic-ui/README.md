@@ -1,24 +1,71 @@
 # Prallactic UI
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
+A collection of simple unstyled ui components for Angular.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project ng-parallactic-ui` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-parallactic-ui`.
-> Note: Don't forget to add `--project ng-parallactic-ui` or else it will be added to the default project in your `angular.json` file. 
+Install with npm
+```shell
+npm i ng-parallactic-ui --save
+```
 
-## Build
+Import the library in your `app.module.ts`
+```typescript
+import { NgParallacticUiModule } from 'ng-parallactic-ui';
 
-Run `ng build ng-parallactic-ui` to build the project. The build artifacts will be stored in the `dist/` directory.
+@NgModule({
+    ...
+    imports: [
+        NgParallacticUiModule,
+    ],
+})
+```
 
-## Publishing
 
-After building your library with `ng build ng-parallactic-ui`, go to the dist folder `cd dist/ng-parallactic-ui` and run `npm publish`.
+## Components
 
-## Running unit tests
+### Datepicker
+Insert a datepicker in your forms
+```html
+<pl-datepicker name="date" [(ngModel)]="date"></pl-datepicker>
+```
 
-Run `ng test ng-ng-parallactic-ui` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Options
+| Option        | Default       | Description                                          |
+| ------------- | ------------- | ---------------------------------------------------- |
+| dateFormat    | 'dd.MM.yyyy'  | Defines the date format to display the selected date |
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Table
+Insert a datepicker in your forms
+```html
+<pl-table 
+    [tableData]="data" 
+    [tableOptions]="tableOptions"
+    [tableColumnsDefinitions]="columnDefinitions"
+    (tableRowClicked)="onTableRowClick($event)">
+</pl-table>
+```
+
+#### Options
+| Name              | Default   | Description                                                                       |
+| ----------------- | --------- | --------------------------------------------------------------------------------- |
+| sortBy            | `null`    | Define column (field name) to sort                                                |
+| sortOrder         | 'asc'     | Defines the sort direction (asc|desc)                                             |
+| selectableRows    | `false`   | Defines if a row is selectable. If yes, a checkbox is added in front of each row. |
+| selectOnRowClick  | `false`   | Makes the whole row clickable to select it                                        |
+
+#### Column Definitions
+| Name              | Description                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------- |
+| title             | Sets the column title                                                                         |
+| field             | Define the field name from the data object (use `title.short` to select nestet field)         |
+| sortable          | Makes the column sortable                                                                     |
+| valueFormatter    | Use a function to return a formatted value (arguments: value, rowData, colDef)                |
+| tableCellRenderer | Use a custom component to render the cell (`@Input() tableCellData: PlTableCellData;`)        |
+
+#### Events
+| Name                      | Description                         |
+| ------------------------- | ----------------------------------- |
+| tableRowClicked           | When a row has been clicked         |
+| tableRowSelectionChanged  | When the selection model changed    |
