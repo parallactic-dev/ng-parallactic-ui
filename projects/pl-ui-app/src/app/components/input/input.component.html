@@ -1,0 +1,9 @@
+<form [formGroup]="form">
+    <pl-input 
+        formControlName="fullName"
+        [label]="'Full Name'"
+        [type]="'text'"
+        [validationMessage]="'Please fill in your name.'"
+        [showValidationMessage]="!form.controls.fullName.valid">
+    </pl-input>
+</form>

@@ -16,6 +16,7 @@ import { PlDatepickerComponent } from './pl-datepicker/pl-datepicker.component';
 import { PlDatepickerOverlayComponent } from './pl-datepicker/components/pl-datepicker-overlay/pl-datepicker-overlay.component';
 import { PlDatepickerCalendarComponent } from './pl-datepicker/components/pl-datepicker-calendar/pl-datepicker-calendar.component';
 import { PlDatepickerHeaderComponent } from './pl-datepicker/components/pl-datepicker-header/pl-datepicker-header.component';
+import { PlInputComponent } from './pl-input/pl-input.component';
 
 @NgModule({
     declarations: [
@@ -33,6 +34,8 @@ import { PlDatepickerHeaderComponent } from './pl-datepicker/components/pl-datep
         PlDatepickerOverlayComponent,
         PlDatepickerCalendarComponent,
         PlDatepickerHeaderComponent,
+        
+        PlInputComponent,
     ],
     providers: [
         ClickOutsideDirective
@@ -44,6 +47,7 @@ import { PlDatepickerHeaderComponent } from './pl-datepicker/components/pl-datep
     exports: [
         PlTableComponent,
         PlDatepickerComponent,
+        PlInputComponent,
     ],
     entryComponents: [
         PlTableCellRendererComponent
