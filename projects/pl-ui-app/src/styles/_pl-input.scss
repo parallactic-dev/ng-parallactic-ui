@@ -1,3 +1,41 @@
 .pl-input {
-    
+    display: block;
+}
+
+.pl-input__label {
+    display: block;
+    margin-bottom: .2rem;
+    font-size: 1rem;
+    font-weight: $font-weight-light;
+    color: $color-secondary;
+}
+
+.pl-input__control {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: .66rem .75rem;
+    border: 1px solid $color-secondary;
+    border-radius: $border-radius;
+    font-size: 1.125rem;
+    font-weight: $font-weight-light;
+    color: $color-secondary;
+}
+
+.pl-input__control:focus,
+.pl-input__control:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba($color-secondary, 0.2);
+}
+
+.pl-input__addition {
+    min-height: 1rem;
+    margin-top: .2rem;
+}
+
+.pl-input__validation-msg {
+    font-size: .875rem;
+    font-weight: $font-weight-light;
+    color: $color-primary-alt;
+    line-height: 1;
 }

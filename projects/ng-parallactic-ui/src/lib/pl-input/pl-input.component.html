@@ -1,6 +1,8 @@
 <div class="pl-input">
     <label class="pl-input__label">{{ label }}</label>
     <input [type]="type" class="pl-input__control" (input)="onChange($event)" [ngModel]="model">
-    <div class="pl-input__help-text" *ngIf="!showValidationMessage">{{ helpText }}</div>
-    <div class="pl-input__validation-msg" *ngIf="showValidationMessage">{{ validationMessage }}</div>
+    <div class="pl-input__addition">
+        <div class="pl-input__help-text" *ngIf="!showValidationMessage">{{ helpText }}</div>
+        <div class="pl-input__validation-msg" *ngIf="showValidationMessage">{{ validationMessage }}</div>
+    </div>
 </div>
