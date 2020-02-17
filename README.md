@@ -1,4 +1,4 @@
-# Prallactic UI
+# Parallactic UI
 
 ## Code scaffolding
 
