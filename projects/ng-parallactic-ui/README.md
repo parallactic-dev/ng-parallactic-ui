@@ -36,6 +36,28 @@ Insert a datepicker in your forms
 | dateFormat    | 'dd.MM.yyyy'  | Defines the date format to display the selected date |
 
 
+### Input
+Adds a input form control
+```html
+<pl-input 
+    [label]="'Full Name'"
+    [type]="'text'"
+    [validationMessage]="'Please fill in your name.'"
+    [showValidationMessage]="!form.controls.fullName.valid"
+    [(ngModel)]="model">
+</pl-input>
+```
+
+#### Options
+| Option                | Default | Description                                                              |
+| --------------------- | ------- | ------------------------------------------------------------------------ |
+| label                 |         | Sets the form control label                                              |
+| type                  |         | Sets the input type. 'text', 'number', 'email', 'password', 'tel', 'url' |
+| helpText              |         | Sets the helper text below the input                                     |
+| validationMessage     |         | Sets the validation message                                              |
+| showValidationMessage | false   | Shows the validation message if invalid                                  |
+
+
 ### Table
 Insert a datepicker in your forms
 ```html
