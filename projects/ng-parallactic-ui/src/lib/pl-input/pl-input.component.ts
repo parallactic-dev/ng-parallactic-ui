@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, forwardRef } from '@angular/core';
+import { Component, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { noop } from 'rxjs';
 
@@ -14,7 +14,7 @@ import { noop } from 'rxjs';
         }
     ]
 })
-export class PlInputComponent implements ControlValueAccessor, OnInit {
+export class PlInputComponent implements ControlValueAccessor {
     @Input() label: string;
     @Input() type: 'text' | 'number' | 'email' | 'password' | 'tel' | 'url';
     @Input() helpText: string;
@@ -25,16 +25,9 @@ export class PlInputComponent implements ControlValueAccessor, OnInit {
 
     constructor() { }
 
-    ngOnInit() {
-    }
-
     public onChange(value) {
         this.propagateChange(value.data);
     }
-
-
-
-
 
 
     public propagateChange = (value: any) => value;
